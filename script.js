@@ -22,7 +22,9 @@
 
   function closeLetter() {
     letter.classList.remove('open');
-    scene.classList.remove('open');
+    setTimeout(function () {
+      scene.classList.remove('open');
+    }, 480);
   }
 
   function openModal() {
