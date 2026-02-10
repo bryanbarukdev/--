@@ -11,25 +11,13 @@
 
 html {
   overflow: hidden;
-  overflow: clip;
   height: 100%;
-  position: fixed;
-  width: 100%;
 }
 
 body {
   background: #470b0b;
   min-height: 100vh;
-  height: 100vh;
-  max-height: 100vh;
   overflow: hidden;
-  overflow: clip;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
 
 .letter-scene {
