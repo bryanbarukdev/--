@@ -32,6 +32,17 @@ body {
   box-sizing: border-box;
 }
 
+.site-credit {
+  margin-top: auto;
+  margin-bottom: 12px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: rgba(255, 220, 215, 0.5);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
 .letter-hint {
   position: relative;
   margin-bottom: 32px;
