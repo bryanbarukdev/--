@@ -22,18 +22,13 @@ body {
 
 .hearts-bg {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  -webkit-mask-image: radial-gradient(ellipse 260px 300px at 50% 50%, black 0%, black 99%, white 100%);
-  mask-image: radial-gradient(ellipse 260px 300px at 50% 50%, black 0%, black 99%, white 100%);
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
 }
 
 .heart-float {
@@ -70,29 +65,8 @@ body {
   gap: 0;
   padding: clamp(16px, 5vw, 28px);
   box-sizing: border-box;
-}
-
-.letter-scene::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 320px;
-  height: 380px;
-  margin: -190px 0 0 -160px;
-  background: radial-gradient(
-    ellipse at center,
-    #470b0b 0%,
-    #470b0b 25%,
-    rgba(71, 11, 11, 0.98) 40%,
-    rgba(71, 11, 11, 0.9) 52%,
-    rgba(71, 11, 11, 0.7) 64%,
-    rgba(71, 11, 11, 0.45) 76%,
-    rgba(71, 11, 11, 0.2) 88%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: -1;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .site-credit {
@@ -344,19 +318,12 @@ body {
 /* Modal carta */
 .modal-overlay {
   position: fixed;
-  top: calc(-1 * env(safe-area-inset-top, 0px));
-  left: calc(-1 * env(safe-area-inset-left, 0px));
-  right: calc(-1 * env(safe-area-inset-right, 0px));
-  bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
+  inset: 0;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  padding-top: calc(24px + env(safe-area-inset-top, 0px));
-  padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
-  padding-left: calc(24px + env(safe-area-inset-left, 0px));
-  padding-right: calc(24px + env(safe-area-inset-right, 0px));
   box-sizing: border-box;
   opacity: 0;
   visibility: hidden;
@@ -386,16 +353,8 @@ body {
 
 .modal-backdrop {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200vmax;
-  height: 200vmax;
-  min-width: 100vw;
-  min-height: 100vh;
-  margin: -100vmax 0 0 -100vmax;
-  background: rgba(40, 8, 8, 0.75);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  inset: 0;
+  background: rgba(40, 8, 8, 0.8);
 }
 
 .modal-letter {
