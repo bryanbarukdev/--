@@ -9,9 +9,26 @@
   touch-action: manipulation;
 }
 
-body {
-  background: #470b0b;
+html {
   min-height: 100vh;
+  background: #170303;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 3, 3, 1) 0%,
+    rgb(73, 11, 11) 50%,
+    rgba(71, 11, 11, 1) 100%
+  );
+}
+
+body {
+  min-height: 100vh;
+  background: #170303;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 3, 3, 1) 0%,
+    rgb(73, 11, 11) 50%,
+    rgba(71, 11, 11, 1) 100%
+  );
 }
 
 .letter-scene {
