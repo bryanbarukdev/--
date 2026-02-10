@@ -33,17 +33,26 @@ body {
 }
 
 .site-credit {
-  position: absolute;
-  bottom: 12px;
+  position: fixed;
+  bottom: 0;
   left: 0;
   right: 0;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.65rem;
   font-weight: 500;
-  color: rgba(255, 220, 215, 0.5);
+  color: rgba(255, 220, 215, 0.7);
+  -webkit-text-fill-color: rgba(255, 220, 215, 0.7);
   text-align: center;
   letter-spacing: 0.02em;
   pointer-events: none;
+  z-index: 50;
+}
+
+.site-credit strong {
+  color: rgb(170, 61, 61);
+  -webkit-text-fill-color: rgb(170, 61, 61);
+  font-weight: 600;
 }
 
 .letter-hint {
