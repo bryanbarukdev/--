@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
+
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#470b0b">
-  <title>Carta</title>
+  <title>SCSS</title>
 
   <style>
     *, *::before, *::after {
@@ -19,9 +20,6 @@
 }
     body {
 	background: #470b0b;
-	background: radial-gradient(ellipse 120% 100% at 50% 50%, #5c1212 0%, #3d0808 50%, #2a0505 100%);
-	min-height: 100vh;
-	margin: 0;
 }
 
 .hearts-bg {
@@ -47,10 +45,6 @@
 	animation: float-up linear infinite;
 }
 
-.heart-float.heart-drift {
-	animation: float-up-drift linear infinite;
-}
-
 .heart-float svg {
 	display: block;
 	width: 100%;
@@ -59,23 +53,11 @@
 }
 
 @keyframes float-up {
-	0% { transform: translateY(100vh) translateX(0); }
-	100% { transform: translateY(-100%) translateX(0); }
-}
-
-@keyframes float-up-drift {
-	0% { transform: translateY(100vh) translateX(0); }
-	50% { transform: translateY(50vh) translateX(8px); }
-	100% { transform: translateY(-100%) translateX(-4px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.heart-float {
-		animation: none;
-		opacity: 0.12;
+	0% {
+		transform: translateY(100vh) translateX(0);
 	}
-	.letter-image {
-		animation: none;
+	100% {
+		transform: translateY(-100%) translateX(0);
 	}
 }
 
@@ -90,31 +72,15 @@
 	-moz-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	cursor: pointer;
-	animation: letter-fade-in 0.6s ease-out;
-	outline: none;
-}
-
-.letter-image:focus-visible {
-	outline: 2px solid rgba(255, 219, 219, 0.6);
-	outline-offset: 4px;
-}
-
-@keyframes letter-fade-in {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
 }
 
 .animated-mail {
 	position: absolute;
 	height: 150px;
 	width: 200px;
-	-webkit-transition: transform .45s ease-out;
-	-moz-transition: transform .45s ease-out;
-	transition: transform .45s ease-out;
+	-webkit-transition: .4s;
+	-moz-transition: .4s;
+	transition: .4s;
 	
 	.body {
 		position: absolute;
@@ -135,11 +101,11 @@
 		border-style: solid;
 		border-width: 50px 100px 0 100px;
 		-webkit-transform-origin: 50% 0%;
-		-webkit-transition: transform .45s .4s ease-out, z-index .2s .4s;
+		-webkit-transition: transform .4s .4s, z-index .2s .4s;
 		-moz-transform-origin: 50% 0%;
-		-moz-transition: transform .45s .4s ease-out, z-index .2s .4s;
+		-moz-transition: transform .4s .4s, z-index .2s .4s;
 		transform-origin: 50% 0%;
-		transition: transform .45s .4s ease-out, z-index .2s .4s;
+		transition: transform .4s .4s, z-index .2s .4s;
 		border-color: #9b231c transparent transparent transparent;
 		z-index: 2;
 	}
@@ -173,20 +139,20 @@
 		background: rgb(255, 219, 219);
 		z-index: 1;
 		overflow: hidden;
-		-webkit-transition: height .45s .2s ease-out;
-		-moz-transition: height .45s .2s ease-out;
-		transition: height .45s .2s ease-out;
+		-webkit-transition: .4s .2s;
+		-moz-transition: .4s .2s;
+		transition: .4s .2s;
 		
 		.letter-border {
 			height: 10px;
 			width: 100%;
-			background: repeating-linear-gradient(
-				-45deg,
-				#cb5a5e,
-				#cb5a5e 8px,
-				transparent 8px,
-				transparent 18px
-			);
+      background: repeating-linear-gradient(
+        -45deg,
+        #cb5a5e,
+        #cb5a5e 8px,
+        transparent 8px,
+        transparent 18px
+      );
 		}
 		
 		.letter-title {
@@ -222,12 +188,13 @@
 	left: 50%;
 	width: 400px;
 	height: 30px;
-	transition: width .45s ease-out;
+	transition: .4s;
 	transform: translateX(-50%);
-	-webkit-transition: width .45s ease-out;
+	-webkit-transition: .4s;
 	-webkit-transform: translateX(-50%);
-	-moz-transition: width .45s ease-out;
+	-moz-transition: .4s;
 	-moz-transform: translateX(-50%);
+	
 	border-radius: 100%;
 	background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
 }
@@ -241,11 +208,11 @@
 		}
 		
 		.animated-mail .top-fold {
-			transition: transform .45s ease-out, z-index .2s;
+			transition: transform .4s, z-index .2s;
 			transform: rotateX(180deg);
-			-webkit-transition: transform .45s ease-out, z-index .2s;
+			-webkit-transition: transform .4s, z-index .2s;
 			-webkit-transform: rotateX(180deg);
-			-moz-transition: transform .45s ease-out, z-index .2s;
+			-moz-transition: transform .4s, z-index .2s;
 			-moz-transform: rotateX(180deg);
 			z-index: 0;
 		}
@@ -270,11 +237,11 @@
   </svg>
   <div class="hearts-bg" aria-hidden="true">
 	<div class="heart-float" style="left: 8%; width: 160px; height: 160px; animation-duration: 24s; animation-delay: 0s;"><svg viewBox="0 0 24 24"><use href="#heart-icon"/></svg></div>
-	<div class="heart-float heart-drift" style="left: 82%; width: 200px; height: 200px; animation-duration: 28s; animation-delay: -8s;"><svg viewBox="0 0 24 24"><use href="#heart-icon"/></svg></div>
-	<div class="heart-float heart-drift" style="left: 35%; width: 140px; height: 140px; animation-duration: 26s; animation-delay: -14s;"><svg viewBox="0 0 24 24"><use href="#heart-icon"/></svg></div>
+	<div class="heart-float" style="left: 82%; width: 200px; height: 200px; animation-duration: 28s; animation-delay: -8s;"><svg viewBox="0 0 24 24"><use href="#heart-icon"/></svg></div>
+	<div class="heart-float" style="left: 35%; width: 140px; height: 140px; animation-duration: 26s; animation-delay: -14s;"><svg viewBox="0 0 24 24"><use href="#heart-icon"/></svg></div>
 	<div class="heart-float" style="left: 70%; width: 180px; height: 180px; animation-duration: 30s; animation-delay: -5s;"><svg viewBox="0 0 24 24"><use href="#heart-icon"/></svg></div>
   </div>
-  <div class="letter-image" tabindex="0" role="button" aria-label="Abrir carta">
+  <div class="letter-image">
 	<div class="animated-mail">
 		<div class="back-fold"></div>
 		<div class="letter">
@@ -313,18 +280,6 @@
         e.preventDefault();
         openLetter();
       }, { passive: false });
-      letter.addEventListener('keydown', function (e) {
-        if (e.key === ' ' || e.key === 'Enter') {
-          e.preventDefault();
-          openLetter();
-        }
-      });
-      letter.addEventListener('keyup', function (e) {
-        if (e.key === ' ' || e.key === 'Enter') {
-          e.preventDefault();
-          closeLetter();
-        }
-      });
       window.addEventListener('pointerup', closeLetter);
       window.addEventListener('touchend', closeLetter, { passive: true });
       window.addEventListener('touchcancel', closeLetter, { passive: true });
