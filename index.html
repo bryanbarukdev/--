@@ -22,52 +22,12 @@
 	background: #470b0b;
 }
 
-.hearts-bg {
-	position: fixed;
-	inset: 0;
-	z-index: 0;
-	overflow: hidden;
-	pointer-events: none;
-	-webkit-mask-image: radial-gradient(ellipse 260px 300px at 50% 50%, black 0%, black 99%, white 100%);
-	mask-image: radial-gradient(ellipse 260px 300px at 50% 50%, black 0%, black 99%, white 100%);
-	-webkit-mask-size: 100% 100%;
-	mask-size: 100% 100%;
-	-webkit-mask-position: center;
-	mask-position: center;
-	-webkit-mask-repeat: no-repeat;
-	mask-repeat: no-repeat;
-}
-
-.heart-float {
-	position: absolute;
-	opacity: 0.28;
-	color: #f472b6;
-	animation: float-up linear infinite;
-}
-
-.heart-float svg {
-	display: block;
-	width: 100%;
-	height: 100%;
-	fill: currentColor;
-}
-
-@keyframes float-up {
-	0% {
-		transform: translateY(100vh) translateX(0);
-	}
-	100% {
-		transform: translateY(-100%) translateX(0);
-	}
-}
-
 .letter-image {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	width: 200px;
 	height: 200px;
-	z-index: 10;
 	-webkit-transform: translate(-50%, -50%);
 	-moz-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
@@ -187,16 +147,23 @@
 	top: 200px;
 	left: 50%;
 	width: 400px;
-	height: 30px;
+	height: 40px;
 	transition: .4s;
 	transform: translateX(-50%);
 	-webkit-transition: .4s;
 	-webkit-transform: translateX(-50%);
 	-moz-transition: .4s;
 	-moz-transform: translateX(-50%);
-	
-	border-radius: 100%;
-	background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+	border-radius: 50%;
+	background: radial-gradient(
+		ellipse 80% 100% at 50% 0%,
+		rgba(30, 4, 4, 0.45) 0%,
+		rgba(25, 3, 3, 0.25) 35%,
+		rgba(20, 2, 2, 0.08) 65%,
+		transparent 100%
+	);
+	-webkit-filter: blur(4px);
+	filter: blur(4px);
 }
 
 	.letter-image:hover,
@@ -223,6 +190,7 @@
 		
 		.shadow {
 			width: 250px;
+			height: 28px;
 		}
 	}
   </style>
@@ -230,17 +198,6 @@
   
 </head>
 <body>
-  <svg style="position:absolute;width:0;height:0" aria-hidden="true">
-	<defs>
-	  <path id="heart-icon" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-	</defs>
-  </svg>
-  <div class="hearts-bg" aria-hidden="true">
-	<div class="heart-float" style="left: 8%; width: 160px; height: 160px; animation-duration: 24s; animation-delay: 0s;"><svg viewBox="0 0 24 24"><use href="#heart-icon"/></svg></div>
-	<div class="heart-float" style="left: 82%; width: 200px; height: 200px; animation-duration: 28s; animation-delay: -8s;"><svg viewBox="0 0 24 24"><use href="#heart-icon"/></svg></div>
-	<div class="heart-float" style="left: 35%; width: 140px; height: 140px; animation-duration: 26s; animation-delay: -14s;"><svg viewBox="0 0 24 24"><use href="#heart-icon"/></svg></div>
-	<div class="heart-float" style="left: 70%; width: 180px; height: 180px; animation-duration: 30s; animation-delay: -5s;"><svg viewBox="0 0 24 24"><use href="#heart-icon"/></svg></div>
-  </div>
   <div class="letter-image">
 	<div class="animated-mail">
 		<div class="back-fold"></div>
