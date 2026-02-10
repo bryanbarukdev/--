@@ -43,7 +43,7 @@
       modal.setAttribute('aria-hidden', 'true');
       setTimeout(function () {
         closeLetter();
-      }, 120);
+      }, 220);
     };
 
     if (modalLetter) {
@@ -57,7 +57,7 @@
       if (modal.classList.contains('is-closing')) {
         modal.classList.remove('is-open', 'is-closing');
         modal.setAttribute('aria-hidden', 'true');
-        setTimeout(closeLetter, 120);
+        setTimeout(closeLetter, 220);
       }
     }, 650);
   }
