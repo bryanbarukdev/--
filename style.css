@@ -72,6 +72,29 @@ body {
   box-sizing: border-box;
 }
 
+.letter-scene::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 380px;
+  margin: -190px 0 0 -160px;
+  background: radial-gradient(
+    ellipse at center,
+    #470b0b 0%,
+    #470b0b 25%,
+    rgba(71, 11, 11, 0.98) 40%,
+    rgba(71, 11, 11, 0.9) 52%,
+    rgba(71, 11, 11, 0.7) 64%,
+    rgba(71, 11, 11, 0.45) 76%,
+    rgba(71, 11, 11, 0.2) 88%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
 .site-credit {
   position: fixed;
   bottom: 0;
