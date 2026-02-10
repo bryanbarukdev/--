@@ -31,10 +31,27 @@ body {
   pointer-events: none;
 }
 
+.fade-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 50% 55% at 50% 50%,
+    #470b0b 0%,
+    rgba(71, 11, 11, 0.97) 30%,
+    rgba(71, 11, 11, 0.85) 50%,
+    rgba(71, 11, 11, 0.5) 72%,
+    transparent 100%
+  );
+}
+
 .heart-float {
   position: absolute;
+  bottom: 0;
   opacity: 0.28;
   color: #fce8e6;
+  -webkit-animation: float-up linear infinite;
   animation: float-up linear infinite;
 }
 
@@ -42,7 +59,22 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  fill: currentColor;
+  fill: #fce8e6;
+}
+
+.heart-float use {
+  fill: #fce8e6;
+}
+
+@-webkit-keyframes float-up {
+  0% {
+    -webkit-transform: translateY(100vh) translateX(0);
+    transform: translateY(100vh) translateX(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100vh) translateX(0);
+    transform: translateY(-100vh) translateX(0);
+  }
 }
 
 @keyframes float-up {
@@ -50,14 +82,14 @@ body {
     transform: translateY(100vh) translateX(0);
   }
   100% {
-    transform: translateY(-100%) translateX(0);
+    transform: translateY(-100vh) translateX(0);
   }
 }
 
 .letter-scene {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
