@@ -8,6 +8,16 @@
   <title>SCSS</title>
 
   <style>
+    *, *::before, *::after {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-user-drag: none;
+	touch-action: manipulation;
+}
     body {
 	background: #470b0b;
 }
@@ -200,6 +210,10 @@
 
   <script>
     (function () {
+      function preventSelect(e) { e.preventDefault(); }
+      document.addEventListener('selectstart', preventSelect);
+      document.addEventListener('dragstart', preventSelect);
+      document.addEventListener('contextmenu', preventSelect);
       var letter = document.querySelector('.letter-image');
       if (!letter) return;
       function openLetter() {
@@ -211,9 +225,10 @@
       letter.addEventListener('pointerdown', function () {
         openLetter();
       });
-      letter.addEventListener('touchstart', function () {
+      letter.addEventListener('touchstart', function (e) {
+        e.preventDefault();
         openLetter();
-      }, { passive: true });
+      }, { passive: false });
       window.addEventListener('pointerup', closeLetter);
       window.addEventListener('touchend', closeLetter, { passive: true });
       window.addEventListener('touchcancel', closeLetter, { passive: true });
