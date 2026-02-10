@@ -11,6 +11,7 @@
 
 html {
   overflow: hidden;
+  overflow: clip;
   height: 100%;
   position: fixed;
   width: 100%;
@@ -22,6 +23,7 @@ body {
   height: 100vh;
   max-height: 100vh;
   overflow: hidden;
+  overflow: clip;
   position: fixed;
   width: 100%;
   top: 0;
@@ -278,6 +280,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease, visibility 0.4s ease;
+  overflow: hidden;
 }
 
 .modal-overlay.is-open {
@@ -385,8 +388,15 @@ body {
   color: #3d2c2a;
   max-height: 60vh;
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.modal-letter-content::-webkit-scrollbar {
+  display: none;
 }
 
 .modal-letter-greeting {
