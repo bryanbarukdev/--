@@ -34,6 +34,8 @@
 	align-items: center;
 	justify-content: center;
 	gap: 0;
+	padding: clamp(16px, 5vw, 28px);
+	box-sizing: border-box;
 }
 
 .letter-hint {
@@ -263,11 +265,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 24px;
+		padding: clamp(20px, 6vw, 32px);
 		box-sizing: border-box;
 		opacity: 0;
 		visibility: hidden;
-		transition: opacity 0.35s ease, visibility 0.35s ease;
+		transition: opacity 0.4s ease, visibility 0.4s ease;
 	}
 	.modal-overlay.is-open {
 		opacity: 1;
@@ -276,9 +278,14 @@
 	.modal-overlay.is-closing .modal-letter {
 		animation: modal-close 0.5s cubic-bezier(0.55, 0.09, 0.68, 0.53) forwards;
 	}
+	.modal-overlay.is-closing .modal-backdrop {
+		opacity: 0;
+		transition: opacity 0.35s ease;
+	}
 	.modal-overlay.is-closing {
 		opacity: 0;
-		transition-duration: 0.4s;
+		visibility: hidden;
+		transition: opacity 0.35s ease, visibility 0s linear 0.35s;
 	}
 
 	.modal-backdrop {
@@ -479,25 +486,27 @@
         if (!modal) return;
         if (modal.classList.contains('is-closing')) return;
         modal.classList.add('is-closing');
-        var onEnd = function () {
-          modal.removeEventListener('animationend', onEnd);
+        var onModalAnimEnd = function () {
+          modalLetter.removeEventListener('animationend', onModalAnimEnd);
           modal.classList.remove('is-open', 'is-closing');
           modal.setAttribute('aria-hidden', 'true');
-          closeLetter();
+          setTimeout(function () {
+            closeLetter();
+          }, 120);
         };
         if (modalLetter) {
-          modalLetter.addEventListener('animationend', onEnd);
+          modalLetter.addEventListener('animationend', onModalAnimEnd);
         } else {
-          onEnd();
+          onModalAnimEnd();
         }
         setTimeout(function () {
-          modalLetter.removeEventListener('animationend', onEnd);
+          modalLetter.removeEventListener('animationend', onModalAnimEnd);
           if (modal.classList.contains('is-closing')) {
             modal.classList.remove('is-open', 'is-closing');
             modal.setAttribute('aria-hidden', 'true');
-            closeLetter();
+            setTimeout(closeLetter, 120);
           }
-        }, 600);
+        }, 650);
       }
       function onLetterTap() {
         if (letter.classList.contains('open')) {
