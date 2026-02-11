@@ -40,12 +40,13 @@ body {
     linear-gradient(to bottom, #470b0b 0%, rgba(71, 11, 11, 0.4) 12%, transparent 22%),
     linear-gradient(to top, #470b0b 0%, rgba(71, 11, 11, 0.4) 12%, transparent 22%),
     radial-gradient(
-      ellipse 42% 48% at 50% 50%,
+      ellipse 55% 70% at 50% 55%,
       #470b0b 0%,
-      #470b0b 45%,
-      rgba(71, 11, 11, 0.98) 58%,
-      rgba(71, 11, 11, 0.9) 70%,
-      rgba(71, 11, 11, 0.6) 82%,
+      #470b0b 50%,
+      #470b0b 60%,
+      rgba(71, 11, 11, 0.98) 72%,
+      rgba(71, 11, 11, 0.85) 82%,
+      rgba(71, 11, 11, 0.5) 92%,
       transparent 100%
     );
   background-size: 100% 100%, 100% 100%, 100% 100%;
