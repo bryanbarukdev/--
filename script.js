@@ -1,4 +1,9 @@
 (function () {
+  var isSafariIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  if (isSafariIOS) {
+    document.documentElement.classList.add('safari-ios');
+  }
+
   function preventSelect(e) {
     e.preventDefault();
   }
@@ -98,6 +103,11 @@
   });
 
   letter.addEventListener('touchstart', function (e) {
+    if (isBusy) {
+      e.preventDefault();
+      e.stopPropagation();
+      return;
+    }
     e.preventDefault();
     onLetterTap();
   }, { passive: false });
