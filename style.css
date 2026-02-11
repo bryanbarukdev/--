@@ -37,24 +37,20 @@ body {
   z-index: 1;
   pointer-events: none;
   background-image:
-    linear-gradient(to bottom, #470b0b 0%, rgba(71, 11, 11, 0.4) 12%, transparent 22%),
-    linear-gradient(to top, #470b0b 0%, rgba(71, 11, 11, 0.4) 12%, transparent 22%),
+    linear-gradient(to bottom, #470b0b 0%, rgba(71, 11, 11, 0.35) 10%, transparent 20%),
+    linear-gradient(to top, #470b0b 0%, rgba(71, 11, 11, 0.35) 10%, transparent 20%),
     radial-gradient(
       ellipse 45% 6% at 50% 36%,
       #470b0b 0%,
-      #470b0b 45%,
-      rgba(71, 11, 11, 0.98) 62%,
-      rgba(71, 11, 11, 0.85) 78%,
+      rgba(71, 11, 11, 0.95) 50%,
+      rgba(71, 11, 11, 0.6) 75%,
       transparent 100%
     ),
     radial-gradient(
-      ellipse 55% 70% at 50% 55%,
-      #470b0b 0%,
-      #470b0b 50%,
-      #470b0b 60%,
-      rgba(71, 11, 11, 0.98) 72%,
-      rgba(71, 11, 11, 0.85) 82%,
-      rgba(71, 11, 11, 0.5) 92%,
+      ellipse 38% 42% at 50% 52%,
+      rgba(71, 11, 11, 0.75) 0%,
+      rgba(71, 11, 11, 0.5) 35%,
+      rgba(71, 11, 11, 0.25) 60%,
       transparent 100%
     );
   background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
