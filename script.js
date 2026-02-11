@@ -15,7 +15,21 @@
 
   if (!letter || !scene) return;
 
+  var isBusy = false;
+  var ANIM_ENVELOPE_MS = 650;
+  var ANIM_MODAL_OPEN_MS = 700;
+  var ANIM_MODAL_CLOSE_MS = 1300;
+
+  function setBusy(durationMs) {
+    isBusy = true;
+    setTimeout(function () {
+      isBusy = false;
+    }, durationMs);
+  }
+
   function openLetter() {
+    if (isBusy) return;
+    setBusy(ANIM_ENVELOPE_MS);
     letter.classList.add('open');
     scene.classList.add('open');
   }
@@ -29,6 +43,8 @@
 
   function openModal() {
     if (!modal) return;
+    if (isBusy) return;
+    setBusy(ANIM_MODAL_OPEN_MS);
     modal.classList.remove('is-closing');
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
@@ -37,6 +53,8 @@
   function closeModal() {
     if (!modal) return;
     if (modal.classList.contains('is-closing')) return;
+    if (isBusy) return;
+    setBusy(ANIM_MODAL_CLOSE_MS);
     modal.classList.add('is-closing');
 
     var onModalAnimEnd = function () {
@@ -65,6 +83,7 @@
   }
 
   function onLetterTap() {
+    if (isBusy) return;
     if (letter.classList.contains('open')) {
       openModal();
     } else {
