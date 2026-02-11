@@ -36,14 +36,21 @@ body {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: radial-gradient(
-    ellipse 50% 55% at 50% 50%,
-    #470b0b 0%,
-    rgba(71, 11, 11, 0.97) 30%,
-    rgba(71, 11, 11, 0.85) 50%,
-    rgba(71, 11, 11, 0.5) 72%,
-    transparent 100%
-  );
+  background-image:
+    linear-gradient(to bottom, #470b0b 0%, rgba(71, 11, 11, 0.4) 12%, transparent 22%),
+    linear-gradient(to top, #470b0b 0%, rgba(71, 11, 11, 0.4) 12%, transparent 22%),
+    radial-gradient(
+      ellipse 42% 48% at 50% 50%,
+      #470b0b 0%,
+      #470b0b 45%,
+      rgba(71, 11, 11, 0.98) 58%,
+      rgba(71, 11, 11, 0.9) 70%,
+      rgba(71, 11, 11, 0.6) 82%,
+      transparent 100%
+    );
+  background-size: 100% 100%, 100% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .heart-float {
