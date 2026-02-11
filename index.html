@@ -1,77 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Carta</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="letter-scene">
-    <p class="letter-hint" aria-live="polite">
-      <span class="hint-step hint-step1">
-        <strong style="color:rgb(170, 61, 61);">Meu Amor</strong>, toque no<br>
-        envelope para abrir.
-      </span>
-      <span class="hint-step hint-step2">
-        Agora toque na<br>
-         Carta <strong style="color:rgb(170, 61, 61);">Meu Bem</strong>.
-      </span>
-    </p>
-    <div class="letter-image">
-      <div class="animated-mail">
-        <div class="back-fold"></div>
-        <div class="letter">
-          <div class="letter-border"></div>
-          <div class="letter-title"></div>
-          <div class="letter-context"></div>
-          <div class="letter-stamp">
-            <div class="letter-stamp-inner"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Carta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="letter-scene">
+      <p class="letter-hint" aria-live="polite">
+        <span class="hint-step hint-step1">
+          <strong style="color: rgb(170, 61, 61)">Meu Amor</strong>, toque no<br />
+          envelope para abrir.
+        </span>
+        <span class="hint-step hint-step2">
+          Agora toque na<br />
+          Carta <strong style="color: rgb(170, 61, 61)">Meu Bem</strong>.
+        </span>
+      </p>
+      <div class="letter-image">
+        <div class="animated-mail">
+          <div class="back-fold"></div>
+          <div class="letter">
+            <div class="letter-border"></div>
+            <div class="letter-title"></div>
+            <div class="letter-context"></div>
+            <div class="letter-stamp">
+              <div class="letter-stamp-inner"></div>
+            </div>
+          </div>
+          <div class="top-fold"></div>
+          <div class="body"></div>
+          <div class="left-fold"></div>
+        </div>
+        <div class="shadow"></div>
+      </div>
+      <p class="site-credit">
+        Feito por:
+        <strong style="color: rgb(170, 61, 61)"
+          >Quem mais te ama nesse mundo</strong
+        >
+      </p>
+    </div>
+
+    <div class="modal-overlay" id="letter-modal" aria-hidden="true">
+      <div class="modal-backdrop"></div>
+      <div class="modal-letter">
+        <div class="modal-letter-paper">
+          <div class="modal-letter-content">
+            <p class="modal-letter-greeting">Meu Amor,</p>
+            <p class="modal-letter-body"></p>
+            <p class="modal-letter-body">
+              eu resolvi fazer esta página com muito, muito, muito carinho,
+              porque queria, de alguma forma, poder te presentear com algo que
+              eu achasse que você gostaria e que fosse inovador. Então, pensei
+              que seria uma ótima ideia fazer esta página para você e que, por
+              sinal, deu bastante trabalho (em especial essas animações do
+              envelope, kkkkk). Mas para você, eu não meço esforços nenhum para
+              nada, porque você é
+              <strong style="color: rgb(170, 61, 61)"
+                >o amor da minha vida</strong
+              >.
+            </p>
+            <p class="modal-letter-body">
+              Mas, enfim, eu quis te presentear como uma forma de agradecimento
+              por tudo o que você faz e sempre fez por mim: por me apoiar quando
+              eu preciso, por estar comigo todos os dias, 24 horas por dia,
+              vivendo juntinho comigo como se estivesse aqui mesmo. Você é minha
+              calmaria, meu abrigo seguro, a pessoa que me entende só com um
+              olhar. É em você que eu encontro paz, mesmo quando o mundo parece
+              desabar.
+            </p>
+            <p class="modal-letter-body">
+              Sem você, eu não seria nem metade de quem eu sou, nem me tornaria
+              a pessoa que sou hoje. Você me inspira a ser melhor todos os dias,
+              a enxergar beleza em tudo, a sonhar mais alto e a acreditar que
+              tudo pode dar certo. Você é capaz de me fazer sentir bem quando
+              estou triste, de me fazer enxergar o lado bom de tudo, de me fazer
+              querer lutar cada vez mais pelo nosso futuro e de fazer com que eu
+              me apaixone cada vez mais por você.
+            </p>
+            <p class="modal-letter-body">
+              Eu
+              <strong style="color: rgb(170, 61, 61)">amo e admiro</strong> cada
+              mini detalhezinho seu, meu
+              <strong style="color: rgb(170, 61, 61)">amor</strong>: a forma
+              como você anda, como você sorri, como você me olha, como você se
+              veste, até como você é chata às vezes, kkkkk. Brincadeira, meu
+              <strong style="color: rgb(170, 61, 61)">bem</strong>, kkkkk. Mas,
+              enfim, se eu fosse listar aqui, eu passaria a vida e não
+              terminaria de escrever tudo o que
+              <strong style="color: rgb(170, 61, 61)">amo em você</strong>. Cada
+              segundo ao seu lado é um presente que eu quero guardar pra sempre.
+            </p>
+            <p class="modal-letter-body">
+              Portanto, como já disse,
+              <strong style="color: rgb(170, 61, 61)">amor</strong>, considere
+              isto aqui como um presente de agradecimento por tudo, tudo mesmo.
+              Eu oro todo santo dia para que Deus te proteja, proteja a sua
+              família, e que todas as suas metas e objetivos se realizem. Porque
+              a minha felicidade só depende da sua. Que nossa história continue
+              sendo escrita com muito amor. Te ter na minha vida é a melhor
+              coisa que já me aconteceu, e eu vou passar o resto da minha vida
+              tentando te fazer tão feliz quanto você me faz.
+            </p>
+
+            <p class="modal-letter-body">Com muito muito amor,</p>
+            <p class="modal-letter-sign">
+              — Bryan Baruk
+              <strong style="color: rgb(170, 61, 61)"
+                >(Amor da sua vida)</strong
+              >
+            </p>
           </div>
         </div>
-        <div class="top-fold"></div>
-        <div class="body"></div>
-        <div class="left-fold"></div>
+        <button type="button" class="modal-close" aria-label="Fechar carta">
+          Dobrar carta
+        </button>
       </div>
-      <div class="shadow"></div>
     </div>
-    <p class="site-credit">Feito por: <strong style="color:rgb(170, 61, 61);">Quem mais te ama nesse mundo</strong></p>
-  </div>
 
-  <div class="modal-overlay" id="letter-modal" aria-hidden="true">
-    <div class="modal-backdrop"></div>
-    <div class="modal-letter">
-      <div class="modal-letter-paper">
-        <div class="modal-letter-content">
-          <p class="modal-letter-greeting">Meu Amor,</p>
-          <p class="modal-letter-body">
-            <p class="modal-letter-body">
-              eu resolvi fazer esta página com muito, muito, muito carinho, porque queria, de alguma forma, poder te presentear com algo que eu achasse que você gostaria e que fosse inovador. Então, pensei que seria uma ótima ideia fazer esta página para você e que, por sinal, deu bastante trabalho (em especial essas animações do envelope, kkkkk). Mas para você, eu não meço esforços nenhum para nada, porque você é <strong style="color:rgb(170, 61, 61);">o amor da minha vida</strong>.
-              </p>
-              <p class="modal-letter-body">
-              Mas, enfim, eu quis te presentear como uma forma de agradecimento por tudo o que você faz e sempre fez por mim: por me apoiar quando eu preciso, por estar comigo todos os dias, 24 horas por dia, vivendo juntinho comigo como se estivesse aqui mesmo.
-              </p>
-              <p class="modal-letter-body">
-              Sem você, eu não seria nem metade de quem eu sou, nem me tornaria a pessoa que sou hoje. Você é capaz de me fazer sentir bem quando estou triste, de me fazer enxergar o lado bom de tudo, de me fazer querer lutar cada vez mais pelo nosso futuro e de fazer com que eu me apaixone cada vez mais por você.
-              </p>
-              <p class="modal-letter-body">
-              Eu <strong style="color:rgb(170, 61, 61);">amo e admiro</strong> cada mini detalhezinho seu, meu <strong style="color:rgb(170, 61, 61);">amor</strong>: a forma como você anda, como você sorri, como você me olha, como você se veste, até como você é chata às vezes, kkkkk. Brincadeira, meu <strong style="color:rgb(170, 61, 61);">amor</strong>, kkkkk. Mas, enfim, se eu fosse listar aqui, eu passaria a vida e não terminaria de escrever tudo o que <strong style="color:rgb(170, 61, 61);">amo em você</strong>.
-              </p>
-		  
-          <p class="modal-letter-body">
-            Com muito muito amor,
-          </p>
-          <p class="modal-letter-sign">— Bryan Baruk <strong style="color:rgb(170, 61, 61);">(Amor da sua vida)</strong></p>
-        </div>
-      </div>
-      <button type="button" class="modal-close" aria-label="Fechar carta">Dobrar carta</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
